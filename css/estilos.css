@@ -4,36 +4,18 @@ main, body{
 body {
   position: relative;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #010041;
-  color: #fff;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-}
-nav li {
-  margin-right: 20px;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-}
-nav a:hover {
-  color: #f00;
-}
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-image: url('../src/assets/Fotos/background.jpg');
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat;
 }
 main li {
   width: 30%;
@@ -44,15 +26,9 @@ main h3 {
   font-size: 18px;
   font-weight: bold;
 }
-main p {
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #f00;
-}
 main button {
   margin-top: 10px;
-  background-color: #f00;
+  background-color: rgb(4, 4, 73);
   color: #fff;
   border: none;
   padding: 10px;
@@ -87,30 +63,6 @@ main button:hover {
   width: 80%;
   height: 50%;
 }
-
-#carritoContainer {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f8f8f8;
-}
-
-.carrito-items {
-  width: 100%;
-  margin-bottom: 20px;
-  border-collapse: collapse;
-}
-
-.carrito-items th,
-.carrito-items td {
-  padding: 10px;
-  text-align: center;
-}
-
-.carrito-items th {
-  background-color: #333;
-  color: #fff;
-}
-
 .producto-imagen {
   width: 80px;
   height: 80px;
@@ -139,4 +91,11 @@ main button:hover {
 .carrito-total {
   font-weight: bold;
   text-align: right;
+}
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(4, 4, 73);
+  color: #fff;
 }

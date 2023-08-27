@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import '../../css/estilos.css'
+
 /*pasado a App con props*/
 const itemListContainer = ({greeting}) => {
   return (
     <>
-      <div>
+      <div className="greeting">
         <h1>{greeting}</h1>
       </div>
     </>

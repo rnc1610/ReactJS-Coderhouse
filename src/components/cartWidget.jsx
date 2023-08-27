@@ -3,8 +3,8 @@ import React from 'react'
 const CartWidget = () => {
   return (
     <>
-      🛒
-      <p>5</p>
+      <h1>🛒</h1>
+      <p>2</p>
     </>
   )
 }
