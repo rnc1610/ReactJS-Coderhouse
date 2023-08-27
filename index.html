@@ -9,5 +9,85 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Barcelona Muebles</a>
+      </nav>
+    </header>
+    <main class="container mt-4">
+      <div class="row">
+        <div class="col-sm text-center"><h1>Tienda de Muebles</h1></div>
+        <div class="col-sm text-center"><ul class="col-sm text-center" id="datos-clima"></ul></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm text-center">
+            <img class="imgprod" src="./assets/Fotos/producto1.avif" alt="Producto 1">
+            <h3>Cajonera</h3>
+            <p>$100</p>
+            <button class="agregarProductoBtn" data-producto="producto1">Añadir al carrito</button>
+          </div>
+          <div class="col-sm text-center">
+            <img class="imgprod" src="./assets/Fotos/producto2.avif" alt="Producto 2">
+            <h3>Cama</h3>
+            <p>$150</p>
+            <button class="agregarProductoBtn" data-producto="producto2">Añadir al carrito</button>
+          </div>
+          <div class="col-sm text-center">
+            <img class="imgprod" src="./assets/Fotos/producto3.avif" alt="Producto 3">
+            <h3>Sofá</h3>
+            <p>$200</p>
+            <button class="agregarProductoBtn" data-producto="producto3">Añadir al carrito</button>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-sm text-center">
+            <img class="imgprod" src="./assets/Fotos/producto4.avif" alt="Producto 4">
+            <h3>Silla</h3>
+            <p>$80</p>
+            <button class="agregarProductoBtn" data-producto="producto4">Añadir al carrito</button>
+          </div>
+          <div class="col-sm text-center">
+            <img class="imgprod" src="./assets/Fotos/producto5.avif" alt="Producto 5">
+            <h3>Mesa</h3>
+            <p>$120</p>
+            <button class="agregarProductoBtn" data-producto="producto5">Añadir al carrito</button>
+          </div>
+          <div class="col-sm text-center">
+            <img class="imgprod" src="./assets/Fotos/producto6.avif" alt="Producto 6">
+            <h3>Carrito Auxiliar</h3>
+            <p>$250</p>
+            <button class="agregarProductoBtn" data-producto="producto6">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+      <div id="carrito" class="mt-4">
+        <h2>Carrito de compras</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="carrito-items">
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="4">Total:</th>
+              <th id="carrito-total"></th>
+              <th></th>
+            </tr>
+          </tfoot>
+        </table>
+        <button id="vaciar-carrito" class="btn btn-danger">Vaciar carrito</button>
+      </div>
+    </main>
+    <script src="https://unpkg.com/js-alert/dist/jsalert.min.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
