@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/itemListContainer'
 import ItemCount from './components/ItemCount'
+import '../css/estilos.css'
 
 const App = () => {
 
@@ -13,9 +14,11 @@ const App = () => {
 
   return (
     <>
-      <NavBar />
-      <ItemListContainer />
-      <ItemCount stock={stock} onAdd={agregarCarrito}/>
+    <div className='App'>
+        <NavBar />
+        <ItemListContainer />
+        <ItemCount stock={stock} onAdd={agregarCarrito}/>
+      </div>
     </>
   )
 }
