@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/itemListContainer'
+import Hooks from './components/Hooks'
 
 const App = () => {
 
@@ -9,8 +10,8 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <ItemListContainer greeting={greeting} />
-
+      <ItemListContainer />
+      <Hooks />
     </>
   )
 }
