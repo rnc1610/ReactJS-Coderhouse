@@ -28,7 +28,7 @@ const NavBar = () => {
         </Box>
         <Spacer />
         <Box p='4'>
-          <CartWidget/>
+            <CartWidget/>
         </Box>
       </Flex>
     </>

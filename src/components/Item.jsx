@@ -1,7 +1,12 @@
-import React from 'react'
-import {Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button} from '@chakra-ui/react'
+import React, {useState} from 'react'
+import {Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter} from '@chakra-ui/react'
+import ItemDetail from './ItemDetail'
 
-const Item = ({name, price, stock, image, description}) => {
+const Item = ({name, price, stock, image, description, longDescription}) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+      };
   return (
     <div>
     <Card maxW='sm'>
@@ -27,13 +32,25 @@ const Item = ({name, price, stock, image, description}) => {
         <Divider />
         <CardFooter>
             <ButtonGroup spacing='2'>
-            <Button variant='solid' colorScheme='blue'>
-                Detalles
-            </Button>
-            <Button variant='ghost' colorScheme='blue'>
-                Agregar al carrito
+            <Button variant='solid' colorScheme='blue' onClick={handleOpenModal}>
+            Detalles
             </Button>
             </ButtonGroup>
+            {isModalOpen && (
+                <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Detalles</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                    <ItemDetail name={name} price={price} image={image} longDescription={longDescription} />
+                    </ModalBody>
+                    <ModalFooter>
+                    <Button onClick={() => setIsModalOpen(false)}>Cerrar</Button>
+                    </ModalFooter>
+                </ModalContent>
+        </Modal>
+        )}
         </CardFooter>
         </Card>
     </div>

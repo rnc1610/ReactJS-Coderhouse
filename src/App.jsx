@@ -3,22 +3,28 @@ import NavBar from './components/NavBar'
 import ItemListContainer from './components/itemListContainer'
 import ItemCount from './components/ItemCount'
 import '../css/estilos.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
 
   const stock = 200;
   const agregarCarrito = (quantity) => {
-    // Aquí puedes manejar la lógica para agregar al carrito con la cantidad seleccionada
     console.log(`Agregado al carrito: ${quantity} unidades`);
   };
 
   return (
     <>
+    <NavBar />
+    <ItemListContainer /> 
+    <ItemCount stock={stock} onAdd={agregarCarrito}/>
+
+    <BrowserRouter>
     <div className='App'>
-        <NavBar />
-        <ItemListContainer />
-        <ItemCount stock={stock} onAdd={agregarCarrito}/>
-      </div>
+      <Routes>
+        <Route exact path="/" element={<main />}/>
+      </Routes>
+    </div>
+    </BrowserRouter>
     </>
   )
 }

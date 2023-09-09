@@ -15,6 +15,7 @@ const ItemList = ({productos}) => {
                         description = {p.description}
                         longDescription = {p.longDescription}
                         image = {p.image}
+                        categorie = {p.categorie}
                     />
                 )
             })
