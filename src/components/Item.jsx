@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import {Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter} from '@chakra-ui/react'
 import ItemDetail from './ItemDetail'
+import { Link } from 'react-router-dom';
 
-const Item = ({name, price, stock, image, description, longDescription}) => {
+const Item = ({id, name, price, stock, image, description, longDescription}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -32,9 +33,9 @@ const Item = ({name, price, stock, image, description, longDescription}) => {
         <Divider />
         <CardFooter>
             <ButtonGroup spacing='2'>
-            <Button variant='solid' colorScheme='blue' onClick={handleOpenModal}>
-            Detalles
-            </Button>
+                <Button variant='solid' colorScheme='blue' onClick={handleOpenModal}>
+                Detalles
+                </Button>
             </ButtonGroup>
             {isModalOpen && (
                 <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>

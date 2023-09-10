@@ -1,4 +1,4 @@
-//Clase 2 de Septiembre
+/*///Clase 2 de Septiembre
 import React from 'react'
 import {useState , useEffect } from 'react'
 
@@ -33,4 +33,4 @@ console.log('useEffect..')
   )
 }
 
-export default Hooks
+export default Hooks*/
