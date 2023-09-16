@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 /*Para agregar iconos 'Windows+.' y abre el menu the iconos*/
 

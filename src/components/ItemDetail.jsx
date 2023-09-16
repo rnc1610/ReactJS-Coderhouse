@@ -1,12 +1,19 @@
 import React from 'react'
 import { Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
+import ItemCount from './ItemCount'
+import { useParams } from 'react-router-dom'
 
+const ItemDetail = ({productos, productId}) => {
+    const producto = productos.find((p) => p.id.toString() === productId);
 
-const ItemDetail = ({name, price, image, longDescription}) => {
+    if (!producto) {
+        return <div>No se encontró el producto.</div>;
+    }
 
+    const { name, longDescription, price, image } = producto;
 
-  return (
-    
+    return (
+    <div>
     <Card maxW='sm'>
         <CardBody>
             <Image
@@ -25,14 +32,12 @@ const ItemDetail = ({name, price, image, longDescription}) => {
         </CardBody>
         <Divider />
         <CardFooter>
-            <ButtonGroup spacing='2'>
-            <Button variant='solid' colorScheme='blue'>
-                Agregar al carrito
-            </Button>
+        <ButtonGroup spacing='2'>
+                <ItemCount/>
             </ButtonGroup>
         </CardFooter>
         </Card>
+    </div>
     )        
 }
-
 export default ItemDetail

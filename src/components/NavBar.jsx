@@ -43,6 +43,11 @@ const NavBar = () => {
         </Box>
         <Spacer />
         <Box p='4'>
+          <Link to="/form">
+            <h2>Formulario</h2>
+          </Link>
+        </Box>
+        <Box p='4'>
           <Link to="/cart">
             <CartWidget/>
           </Link>
