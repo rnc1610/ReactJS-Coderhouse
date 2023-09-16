@@ -4,7 +4,7 @@ import ItemDetail from './ItemDetail'
 import { Link } from 'react-router-dom'
 import '../../css/estilos.css'
 
-function Item({ name, price, stock, image, description, longDescription }) {
+function Item({ name, price, stock, image, description, longDescription, id }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -19,6 +19,7 @@ function Item({ name, price, stock, image, description, longDescription }) {
                 alt='foto'
                 borderRadius='lg'
               />
+              <Divider />
               <Stack mt='6' spacing='3'>
                 <Heading size='md'>{name}</Heading>
                 <Text>{description}</Text>
@@ -31,12 +32,14 @@ function Item({ name, price, stock, image, description, longDescription }) {
               </Stack>
             </CardBody>
             <CardFooter>
-              <ButtonGroup spacing='2'>
-                <Button variant='solid' colorScheme='blue' onClick={handleOpenModal}>
-                  Detalles
-                </Button>
-              </ButtonGroup>
-              {isModalOpen && (
+              <Link to={`/item/${id}`}>
+                <ButtonGroup spacing='2'>
+                  <Button variant='solid' colorScheme='blue' onClick={handleOpenModal}>
+                    Detalles {id}
+                  </Button>
+                </ButtonGroup>
+              </Link>
+                {isModalOpen && (
                 <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                   <ModalOverlay />
                   <ModalContent>

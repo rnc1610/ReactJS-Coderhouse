@@ -1,9 +1,10 @@
 import React from 'react';
 import ItemList from './ItemList';
-
+import { useParams } from 'react-router-dom'
+import { SimpleGrid } from '@chakra-ui/react';
 
 const itemListContainer = () => {
-
+  const {categoria} = useParams();
   const productos =[
     {
       id: 1,
@@ -72,13 +73,13 @@ const itemListContainer = () => {
     },
 ]
 
-const mostrarProductos = new Promise ((resolve, reject) => {
-  if (productos.lenght > 0)  {
+const mostrarProductos = new Promise((resolve, reject) => {
+  if (productos.length > 0) {
     setTimeout(() => {
       resolve(productos)
     }, 2000)
   } else {
-    reject ("No se puede mostrar los productos")
+    reject("No se pueden mostrar los productos")
   }
 })
 
@@ -90,10 +91,11 @@ mostrarProductos
     console.log(error)
   })
 
+  const productosFiltrados = productos.filter((producto) => producto.categoria === categoria)
+
 return (
   <>
-    <ItemList productos={productos} />
-    
+    <ItemList productos={productosFiltrados} />
   </>
 )
 }

@@ -3,6 +3,7 @@ import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
+    const {id} = useParams();
     const productos =[
         {
         id: 1,
@@ -88,9 +89,11 @@ const ItemDetailContainer = () => {
     .catch ((error)=>{
         console.log(error)
     })
+    const productosFiltrados = productos.filter((producto) => producto.id === id)
+
     return (
     <>
-        <ItemDetail productos={productos} />
+        <ItemDetail productos={productosFiltrados} />
     </>
     )
     }

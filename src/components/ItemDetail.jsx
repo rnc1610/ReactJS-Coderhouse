@@ -1,9 +1,12 @@
 import React from 'react'
 import { Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
 
+
 const ItemDetail = ({name, price, image, longDescription}) => {
+
+
   return (
-    <div>
+    
     <Card maxW='sm'>
         <CardBody>
             <Image
@@ -29,8 +32,7 @@ const ItemDetail = ({name, price, image, longDescription}) => {
             </ButtonGroup>
         </CardFooter>
         </Card>
-    </div>
-  )
+    )        
 }
 
 export default ItemDetail
