@@ -41,12 +41,13 @@ body {
 }
 .product-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between; 
+  overflow-x: auto;
 }
 
 .Card {
-  flex: 0 0 calc(33.33% - 10px); 
+  flex: 0 0 auto; 
   margin-bottom: 40px;
   margin-left: 100px;
 }
