@@ -1,7 +1,6 @@
 import React from 'react'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/itemListContainer'
-import '../css/estilos.css'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Cart from './components/Cart'
 import Form from './components/Form'

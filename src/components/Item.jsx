@@ -1,7 +1,5 @@
-import React, {useState} from 'react'
-import {Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter} from '@chakra-ui/react'
+import {Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import '../../css/estilos.css'
 
 function Item({ name, price, stock, image, description, id }) {
 

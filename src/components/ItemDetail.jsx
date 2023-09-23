@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
-import { useParams } from 'react-router-dom'
 
 const ItemDetail = ({productos, productId}) => {
     const producto = productos.find((p) => p.id.toString() === productId);
@@ -11,7 +10,10 @@ const ItemDetail = ({productos, productId}) => {
     }
 
     const { name, longDescription, price, image } = producto;
-
+    const onAdd = (contar) => {
+        // Aquí puedes hacer algo con la cantidad seleccionada, por ejemplo, agregar al carrito
+        console.log(`Se agregaron ${contar} unidades del producto ${name} al carrito.`);
+    };
     return (
     <div>
     <Card maxW='sm'>
@@ -33,7 +35,7 @@ const ItemDetail = ({productos, productId}) => {
         <Divider />
         <CardFooter>
         <ButtonGroup spacing='2'>
-                <ItemCount/>
+                <ItemCount onAdd={onAdd}/>
             </ButtonGroup>
         </CardFooter>
         </Card>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {ButtonGroup, Button, Text} from '@chakra-ui/react'
 
-const ItemCount = ({stock, onAdd }) => {
+const ItemCount = ({ onAdd }) => {
   const [contar, setContar] = useState(0);
 
   const agregar = () => {
@@ -17,6 +17,7 @@ const ItemCount = ({stock, onAdd }) => {
   const agregarCarrito = () => {
     if (contar > 0) {
       onAdd(contar);
+      setContar(0); 
     }
   };
 

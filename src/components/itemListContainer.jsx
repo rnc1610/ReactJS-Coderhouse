@@ -90,7 +90,7 @@ const itemListContainer = () => {
 
   return (
     <>
-      <ItemList productos={productosFiltrados} />
+        <ItemList productos={productosFiltrados} />
     </>
   );
 };
