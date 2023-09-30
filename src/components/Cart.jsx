@@ -25,9 +25,8 @@ const Cart = () => {
   };
 
   const handlePurchaseSuccess = () => {
-    clear(); 
+    clear();
   };
-
   return (
     <>
       <Flex justifyContent="center" alignItems="center" flexDirection="column">
@@ -106,7 +105,7 @@ const Cart = () => {
               cartItems={cartItems}
               totalPrice={totalPrice}
               onPurchaseSuccess={handlePurchaseSuccess}
-              closeModal={handleCloseModal} // Pasa la función para cerrar el modal
+              closeModal={handleCloseModal}
             />
           </ModalBody>
           <ModalFooter />
