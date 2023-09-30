@@ -1,29 +1,27 @@
-import React from 'react'
-import CartWidget from './cartWidget'
-import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Link as ChakraLink, Image, Heading, } from '@chakra-ui/react'
-import logoTienda from '../assets/Fotos/logoTienda.png'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import CartWidget from './CartWidget';
+import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Link as ChakraLink, Image, Heading } from '@chakra-ui/react';
+import logoTienda from '../assets/Fotos/logoTienda.png';
+import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({ cartItemCount }) => {
   return (
-    <Flex p={4} bg="blue.300" color="white">
-      <Box>
+    <Flex p={4} bg="blue.600" color="white" alignItems="center" justifyContent="center">
+      <Box flex="2">
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <Flex align="center">
-            <Image src={logoTienda} alt="logo de la marca" boxSize="100px" />
-            <Heading size="md" ml={2}>
-              Barcelona Muebles
-            </Heading>
+          <Flex align="center" color="white" fontSize="2xl" textAlign="center">
+            <Image src={logoTienda} alt="logo de la marca" width="150px" />
+            Barcelona Muebles
           </Flex>
         </Link>
       </Box>
       <Spacer />
-      <Box>
+      <Box flex="3">
         <Menu>
-          <MenuButton as={ChakraLink} color="white">
+          <MenuButton as={ChakraLink} color="white" fontSize="2xl" textAlign="center">
             Categorías
           </MenuButton>
-          <MenuList color="black">
+          <MenuList color="black" fontSize="xl">
             <MenuItem>
               <Link to={`/categoria/${'Dormitorio'}`}>Dormitorio</Link>
             </MenuItem>
@@ -36,9 +34,9 @@ const NavBar = () => {
           </MenuList>
         </Menu>
       </Box>
-      <Box>
+      <Box fontSize="5xl" flex="0.5">
         <Link to="/cart" style={{ textDecoration: 'none' }}>
-          <CartWidget />
+          <CartWidget itemCount={cartItemCount} />
         </Link>
       </Box>
     </Flex>

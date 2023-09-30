@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Badge, Flex } from '@chakra-ui/react';
 
-/*Para agregar iconos 'Windows+.' y abre el menu the iconos*/
-
-const CartWidget = () => {
+const CartWidget = ({ itemCount }) => {
   return (
-    <>
-      <h1>🛒</h1>
-      <h2>2</h2>
-    </>
-  )
-}
+    <Flex alignItems="center">
+      <span role="img" aria-label="cart">🛒</span>
+      <Badge colorScheme="blue" variant="solid">
+        {itemCount}
+      </Badge>
+    </Flex>
+  );
+};
 
-export default CartWidget
+export default CartWidget;

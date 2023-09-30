@@ -1,35 +1,49 @@
 import React, { useState } from 'react';
-import {ButtonGroup, Button, Text} from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
+import { Button, Flex, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper } from '@chakra-ui/react';
 
-const ItemCount = ({ onAdd }) => {
-  const [contar, setContar] = useState(0);
+const ItemCount = ({ onAdd, onAddToCart, productDetails }) => {
+  const [count, setCount] = useState(1);
 
-  const agregar = () => {
-    setContar(contar + 1);
-  };
-
-  const restar = () => {
-    if (contar > 0) {
-      setContar(contar - 1);
+  const handleIncrement = () => {
+    if (count < 999) {
+      setCount(count + 1);
     }
   };
 
-  const agregarCarrito = () => {
-    if (contar > 0) {
-      onAdd(contar);
-      setContar(0); 
+  const handleDecrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
+  const handleAddToCart = () => {
+    if (count > 0) {
+      onAdd(count);
+      onAddToCart(productDetails, count); 
+      setCount(1); 
     }
   };
 
   return (
-    <div>
-      <ButtonGroup spacing='2'>
-        <Button variant='solid' colorScheme='red' onClick={restar}>-</Button>
-        <Text variant='solid' colorScheme='white'>{contar}</Text>
-        <Button variant='solid' colorScheme='blue' onClick={agregar}>+</Button>
-        <Button variant='solid' colorScheme='blue' onClick={agregarCarrito}>Agregar al carrito</Button>
-      </ButtonGroup>
-    </div>
+    <Flex alignItems="center">
+      <NumberInput defaultValue={count} min={1} max={999} mr="2">
+        <NumberInputField />
+        <NumberInputStepper>
+          <NumberIncrementStepper onClick={handleIncrement} />
+          <NumberDecrementStepper onClick={handleDecrement} />
+        </NumberInputStepper>
+      </NumberInput>
+      <Link to="/cart">
+      <Button
+        variant="solid"
+        colorScheme="blue"
+        onClick={handleAddToCart}
+      >
+        Agregar al carrito
+      </Button>
+      </Link>
+    </Flex>
   );
 };
 
