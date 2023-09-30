@@ -58,7 +58,7 @@ const itemListContainer = () => {
             name: "Cajonera",
             price: 304,
             stock: 200,
-            description: "Para bajo cocina - blanco y efecto roble, 60x60 cm",
+            description: "Para bajo cocina blanco y efecto roble, 60x60 cm",
             longDescription: "El sistema de cocina METOD te ofrece muchísimas posibilidades para diseñar la cocina de tus sueños. Con los frentes con efecto roble y tiradores integrados, aportarás un toque acogedor y natural.",
             stock: 200,
             image: "/src/assets/Fotos/producto1.avif",

@@ -1,17 +1,24 @@
 import React from 'react'
-import { Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
+import { Card, CardBody, Image, Stack, Heading, Divider, Text, CardFooter, ButtonGroup, Spinner, Flex } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
 
 const ItemDetail = ({productos, productId}) => {
     const producto = productos.find((p) => p.id.toString() === productId);
 
     if (!producto) {
-        return <div>No se encontró el producto.</div>;
-    }
+        return (
+            <Flex
+              height="60vh"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Spinner size="xl" color="blue" />
+            </Flex>
+          );
+        }
 
     const { name, longDescription, price, image } = producto;
     const onAdd = (contar) => {
-        // Aquí puedes hacer algo con la cantidad seleccionada, por ejemplo, agregar al carrito
         console.log(`Se agregaron ${contar} unidades del producto ${name} al carrito.`);
     };
     return (
