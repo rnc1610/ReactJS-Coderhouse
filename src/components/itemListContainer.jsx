@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import { Spinner, Flex } from '@chakra-ui/react';
 
 const itemListContainer = () => {
   const { categoria } = useParams();
   const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const mostrarProductos = new Promise((resolve) => {
@@ -76,11 +78,12 @@ const itemListContainer = () => {
             categoria: "Living"
           },
         ]);
-      }, 2000);
+      }, 1000);
     });
 
     mostrarProductos.then((resultado) => {
       setProductos(resultado);
+      setLoading(false); 
     });
   }, []);
 
@@ -90,7 +93,13 @@ const itemListContainer = () => {
 
   return (
     <>
+      {loading ? (
+        <Flex height="60vh" justifyContent="center" alignItems="center">
+          <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
+        </Flex>
+      ) : (
         <ItemList productos={productosFiltrados} />
+      )}
     </>
   );
 };
